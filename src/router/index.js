@@ -12,6 +12,7 @@ import Home from "@/views/Home.vue";
 import UserForm from "@/components/auth/UserForm.vue";
 import Contact from "@/views/Contact.vue";
 import About from "@/views/About.vue";
+import MenuDisplay from "@/components/customerside/MenuDisplay.vue";
 
 const routes = [
   {
@@ -91,6 +92,12 @@ const routes = [
     component: CategoryItemPage,
     meta: { requiresAuth: true },
     props: true, 
+  },
+  {
+    path: "/m/:shortId",
+    name: "menudisplay",
+    component: MenuDisplay,
+    props: true,
   },
   
 ];
