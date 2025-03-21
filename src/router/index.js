@@ -4,6 +4,10 @@ import LoginForm from "@/components/auth/LoginForm.vue";
 import SignupForm from "@/components/auth/SignupForm.vue";
 import ForgotPwd from "@/components/auth/ForgotPwd.vue";
 import UpdatePwd from "@/components/auth/UpdatePwd.vue";
+import Menu from "@/components/dashboard/menu/Menu.vue";
+import ShareMenu from "@/components/dashboard/menu/ShareMenu.vue";
+import MenuCategoryPage from "@/components/dashboard/category/MenuCategoryPage.vue";
+import CategoryItemPage from "@/components/dashboard/item/CategoryItemPage.vue";
 
 const routes = [
   {
@@ -36,7 +40,32 @@ const routes = [
     component: UpdatePwd,
     meta: { requiresAuth: false },
   },
-
+  {
+    path: "/menu",
+    name: "menu",
+    component: Menu,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/menu/sharemenu",
+    name: "sharemenu",
+    component: ShareMenu,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/menu/:id/:name/",
+    name: "menucategorypage",
+    component: MenuCategoryPage,
+    meta: { requiresAuth: true },
+    props: true,
+  },
+  {
+    path: '/menu/:id/:name/:categoryId/:categoryName',
+    name: 'categoryitempage',
+    component: CategoryItemPage,
+    meta: { requiresAuth: true },
+    props: true, 
+  },
   
 ];
 
