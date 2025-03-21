@@ -8,6 +8,10 @@ import Menu from "@/components/dashboard/menu/Menu.vue";
 import ShareMenu from "@/components/dashboard/menu/ShareMenu.vue";
 import MenuCategoryPage from "@/components/dashboard/category/MenuCategoryPage.vue";
 import CategoryItemPage from "@/components/dashboard/item/CategoryItemPage.vue";
+import Home from "@/views/Home.vue";
+import UserForm from "@/components/auth/UserForm.vue";
+import Contact from "@/views/Contact.vue";
+import About from "@/views/About.vue";
 
 const routes = [
   {
@@ -39,6 +43,28 @@ const routes = [
     name: "updateform",
     component: UpdatePwd,
     meta: { requiresAuth: false },
+  },
+  {
+    path: "/home",
+    name: "home",
+    component: Home,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/profile",
+    name: "profile",
+    component: UserForm,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/contact",
+    name: "contact",
+    component: Contact,
+  },
+  {
+    path: "/about",
+    name: "about",
+    component: About,
   },
   {
     path: "/menu",
